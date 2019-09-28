@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1051266117",
+    "firebase_url": "https://democleanmvp.firebaseio.com",
+    "project_id": "democleanmvp",
+    "storage_bucket": "democleanmvp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051266117:android:e1f55dcbb75ad97cc4a72c",
+        "android_client_info": {
+          "package_name": "com.apvintern.democleanmvp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051266117-iaj334kab8v404sr1sbnv3tvntj2o3cn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apvintern.democleanmvp",
+            "certificate_hash": "bdc7d62b48eae31fe8e1a34e494f0ad2588821d1"
+          }
+        },
+        {
+          "client_id": "1051266117-chkig03oukdub9kaej33lpkq33hkh8gk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJJR5plWh0ja384hvPQP_HRm-xvUSBDvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051266117-chkig03oukdub9kaej33lpkq33hkh8gk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
