@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         initView();
         mainPresenter = new MainPresenter(this);
-        mainPresenter.onCreateMain();
+        mainPresenter.onCreate();
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,5 +95,11 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 .add(R.id.fl_main_container, new AddUserFragment())
                 .addToBackStack("add_user")
                 .commit();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mainPresenter.onDestroy();
     }
 }

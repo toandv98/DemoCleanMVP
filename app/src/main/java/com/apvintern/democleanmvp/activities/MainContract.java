@@ -27,7 +27,9 @@ public interface MainContract {
 
         void onRefreshing();
 
-        void onCreateMain();
+        void onCreate();
+
+        void onDestroy();
 
         void onItemClick(int position);
     }

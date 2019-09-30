@@ -11,6 +11,19 @@ public class MainPresenter implements MainContract.Presenter {
     private MainContract.View mainView;
     private GetUserData getUserData;
 
+    private GetUserData.GetUserCallBack getUserCallBack = new GetUserData.GetUserCallBack() {
+        @Override
+        public void onSuccess(List<User> users) {
+            mainView.updateRecycleView(users);
+            mainView.hideSwipeRefreshLayout();
+        }
+
+        @Override
+        public void onFailure(String msg) {
+            mainView.showMessage(msg);
+        }
+    };
+
     public MainPresenter(MainContract.View mainView) {
         this.mainView = mainView;
         getUserData = new GetUserDataImp();
@@ -23,22 +36,11 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void onRefreshing() {
-        getUserData.getUsers(new GetUserData.GetUserCallBack() {
-            @Override
-            public void onSuccess(List<User> users) {
-                mainView.updateRecycleView(users);
-                mainView.hideSwipeRefreshLayout();
-            }
-
-            @Override
-            public void onFailure(String msg) {
-                mainView.showMessage(msg);
-            }
-        });
+        getUserData.getUsers(getUserCallBack);
     }
 
     @Override
-    public void onCreateMain() {
+    public void onCreate() {
         mainView.showProgressBar();
         getUserData.getUsers(new GetUserData.GetUserCallBack() {
             @Override
@@ -53,6 +55,11 @@ public class MainPresenter implements MainContract.Presenter {
                 mainView.hideProgressBar();
             }
         });
+    }
+
+    @Override
+    public void onDestroy() {
+        getUserCallBack = null;
     }
 
     @Override
