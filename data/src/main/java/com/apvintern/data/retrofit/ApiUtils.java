@@ -1,7 +1,4 @@
-package com.apvintern.data.utils;
-
-import com.apvintern.data.api.ApiService;
-import com.apvintern.data.api.RetrofitClient;
+package com.apvintern.data.retrofit;
 
 import static com.apvintern.data.utils.Constants.API_URL;
 

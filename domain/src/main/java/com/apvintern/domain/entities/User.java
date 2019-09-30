@@ -1,14 +1,18 @@
-package com.apvintern.domain.model;
+package com.apvintern.domain.entities;
 
-public class UserModel {
+public class User {
 
     private String name;
 
-    private String company;
-
-    private String id;
+    private int id;
 
     private String email;
+
+    public User(String name, int id, String email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -18,19 +22,11 @@ public class UserModel {
         return name;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -45,9 +41,8 @@ public class UserModel {
     @Override
     public String toString() {
         return
-                "User{" +
+                "UserResponse{" +
                         "name = '" + name + '\'' +
-                        ",company = '" + company + '\'' +
                         ",id = '" + id + '\'' +
                         ",email = '" + email + '\'' +
                         "}";
